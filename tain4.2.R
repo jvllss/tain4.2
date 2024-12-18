@@ -1,11 +1,9 @@
-# Leer y procesar un archivo de números enteros, calcular estadísticos y escribir resultados.
-
-# Función para leer números desde un archivo
+# Leer números desde un archivo
 leer_numeros <- function(numeros.txt) {
   if (!file.exists(numeros.txt)) {
     stop("El archivo no existe. Verifica el nombre y la ubicación.")
   }
-  # Leer los datos como un vector de enteros
+  # Leer datos como un vector de enteros
   numeros <- as.integer(readLines(nombre_archivo))
   return(numeros)
 }
@@ -27,7 +25,7 @@ if (desviacion_numeros > 10) {
 # Calcular el cuadrado de cada número usando sapply()
 cuadrados <- sapply(numeros, function(x) x^2)
 
-# Escribir resultados en resultados.txt
+# Fichero output
 nombre_salida <- "resultados.txt"
 con <- file(nombre_salida, open = "w")
 writeLines(c(
